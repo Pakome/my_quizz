@@ -22,4 +22,12 @@ class DefaultController extends Controller
         ));
 
     }
+
+    /**
+     * @Route("quizz/:id")
+     */
+    public function showQuizz($id)
+    {
+
+    }
 }
