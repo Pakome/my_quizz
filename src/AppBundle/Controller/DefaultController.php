@@ -32,4 +32,5 @@ class DefaultController extends Controller
     public function roleAdminAction (Request $request) {
         return $this->render('roles/hello-world-admin.html.twig');
     }
+    
 }
