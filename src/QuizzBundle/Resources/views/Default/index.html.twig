@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    BLABLABLABLA
+    {% for categorie in categorie %}
+        <li><a href="">{{ categorie.name }}</a></li>
+    {% endfor %}
 {% endblock %}
