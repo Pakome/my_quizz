@@ -12,6 +12,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('QuizzBundle:Default:index.html.twig');
+        return $this->render('@Quizz/Default/index.html.twig');
     }
 }
