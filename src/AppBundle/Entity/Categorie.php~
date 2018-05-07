@@ -44,14 +44,5 @@ class Categorie
         $this->name = $name;
     }
 
-
-    /**
-     * Get id.
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }
+

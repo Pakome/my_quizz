@@ -87,3 +87,13 @@ swiftmailer:
     password: '%mailer_password%'
     # encryption: '%mailer_encryption%'
     spool: { type: memory }
+
+framework:
+    translator: { fallbacks: [ "en" ] }
+
+easy_admin:
+    entities:
+        - AppBundle\Entity\Categorie
+        - AppBundle\Entity\Question
+        - AppBundle\Entity\Reponse
+        - AppBundle\Entity\User
