@@ -35,7 +35,13 @@ class Question
      */
     private $question;
 
-
+    /**
+     * @return string
+     */
+    public function getQuestion()
+    {
+        return $this->question;
+    }
 
 }
 

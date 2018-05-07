@@ -14,20 +14,30 @@ class DefaultController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $categories = $em->getRepository('QuizzBundle:Categorie')
-            ->findAll();
+        $categories = $em->getRepository('QuizzBundle:Categorie')->findAll();
 
-        return $this->render('@Quizz/Default/index.html.twig', array(
+        return $this->render('@Quizz/index.html.twig', array(
             "categorie" => $categories
         ));
 
     }
 
     /**
-     * @Route("quizz/:id")
+     * @Route("/quizz/{id}")
      */
     public function showQuizz($id)
     {
         $entityManager=$this->getDoctrine()->getManager();
+        $quizz=$entityManager->getRepository('QuizzBundle:Categorie')->find($id);
+
+        dump($quizz);
+        dump($quizz->getQuestion());
+        die();
+
+        return $this->render('@Quizz/quizz.html.twig', array(
+            "quizz" => $quizz,
+
+        ));
+
     }
 }
