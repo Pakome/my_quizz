@@ -28,6 +28,6 @@ class DefaultController extends Controller
      */
     public function showQuizz($id)
     {
-
+        $entityManager=$this->getDoctrine()->getManager();
     }
 }

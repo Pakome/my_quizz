@@ -35,7 +35,7 @@ class Question
      */
     private $question;
 
-    
+
 
 }
 
