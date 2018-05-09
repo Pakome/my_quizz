@@ -44,5 +44,18 @@ class Categorie
         return $this->id;
     }
 
-}
 
+    /**
+     * Set name.
+     *
+     * @param string $name
+     *
+     * @return Categorie
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace QuizzBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,21 +37,12 @@ class Categorie
     }
 
     /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-
-    /**
-     * Get id.
-     *
      * @return int
      */
     public function getId()
     {
         return $this->id;
     }
+
 }
+

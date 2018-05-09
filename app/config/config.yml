@@ -93,7 +93,7 @@ framework:
 
 easy_admin:
     entities:
-        - AppBundle\Entity\Categorie
-        - AppBundle\Entity\Question
-        - AppBundle\Entity\Reponse
+        - QuizzBundle\Entity\Categorie
+        - QuizzBundle\Entity\Question
+        - QuizzBundle\Entity\Reponse
         - AppBundle\Entity\User
