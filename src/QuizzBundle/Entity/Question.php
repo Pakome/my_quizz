@@ -2,6 +2,7 @@
 
 namespace QuizzBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,5 +44,20 @@ class Question
         return $this->question;
     }
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdCategorie()
+    {
+        return $this->idCategorie;
+    }
 }
 

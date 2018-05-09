@@ -2,6 +2,8 @@
 
 namespace QuizzBundle\Controller;
 
+use QuizzBundle\Entity\Question;
+use QuizzBundle\QuizzBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -29,15 +31,13 @@ class DefaultController extends Controller
     {
         $entityManager=$this->getDoctrine()->getManager();
         $quizz=$entityManager->getRepository('QuizzBundle:Categorie')->find($id);
+        $questions=$entityManager->getRepository('QuizzBundle:Question')->findBy(
+            array('idCategorie' => $quizz->getId()));
 
-        dump($quizz);
-        dump($quizz->getQuestion());
-        die();
 
         return $this->render('@Quizz/quizz.html.twig', array(
             "quizz" => $quizz,
-
+            "questions" => $questions,
         ));
-
     }
 }
