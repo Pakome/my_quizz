@@ -29,6 +29,13 @@ class Categorie
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="imageUrl", type="string", length=254, nullable=true)
+     */
+    private $image;
+
+    /**
      * @return string
      */
     public function getName()
@@ -42,6 +49,14 @@ class Categorie
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
 }
