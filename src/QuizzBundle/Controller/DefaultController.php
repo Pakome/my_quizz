@@ -33,11 +33,16 @@ class DefaultController extends Controller
         $quizz=$entityManager->getRepository('QuizzBundle:Categorie')->find($id);
         $questions=$entityManager->getRepository('QuizzBundle:Question')->findBy(
             array('idCategorie' => $quizz->getId()));
+        foreach($questions as $test) {
+            $reponses = $entityManager->getRepository('QuizzBundle:Reponse')->findBy(
+                array('idQuestion' => $test->getId()));
+        }
 
 
         return $this->render('@Quizz/quizz.html.twig', array(
             "quizz" => $quizz,
             "questions" => $questions,
+            "reponses" => $reponses,
         ));
     }
 }
