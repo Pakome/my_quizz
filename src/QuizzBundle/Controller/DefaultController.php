@@ -30,4 +30,11 @@ class DefaultController extends Controller
     {
         $entityManager=$this->getDoctrine()->getManager();
     }
+
+    /**
+     * @Route("quizz/create")
+     */
+    public function createQuizz() {
+        return $this->render('quiz/quiz.html.twig');
+    }
 }
