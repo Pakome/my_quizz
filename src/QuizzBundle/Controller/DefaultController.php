@@ -25,24 +25,27 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/quizz/{id}")
+     * @Route("/quizz/{id_categorie}")
      */
-    public function showQuizz($id)
+    public function showQuizz($id_categorie)
     {
         $entityManager=$this->getDoctrine()->getManager();
-        $quizz=$entityManager->getRepository('QuizzBundle:Categorie')->find($id);
+        $quizz=$entityManager->getRepository('QuizzBundle:Categorie')->find($id_categorie);
         $questions=$entityManager->getRepository('QuizzBundle:Question')->findBy(
             array('idCategorie' => $quizz->getId()));
-        foreach($questions as $test) {
-            $reponses = $entityManager->getRepository('QuizzBundle:Reponse')->findBy(
+        foreach($questions as &$test) {
+            $test->reponses = $entityManager->getRepository('QuizzBundle:Reponse')->findBy(
                 array('idQuestion' => $test->getId()));
         }
 
+    /*     dump($quizz);
+        dump($questions);
+       die();
+    */
 
         return $this->render('@Quizz/quizz.html.twig', array(
             "quizz" => $quizz,
             "questions" => $questions,
-            "reponses" => $reponses,
         ));
     }
 }

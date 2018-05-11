@@ -4,8 +4,8 @@
     {{ quizz.name }}
     {% for question in questions %}
     <li>{{ question.question }}</li>
-        {% for reponse in reponses %}
-            <li>{{ reponses.reponse }}</li>
+        {% for reponse in question.reponses %}
+            - {{ reponse.reponse }}
             {% endfor %}
     {% endfor %}
 
