@@ -25,9 +25,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/quizz/{id_categorie}")
+     * @Route("/quizz/{id}")
      */
-    public function showQuizz($id_categorie)
+    public function showQuizz($id)
     {
         $entityManager=$this->getDoctrine()->getManager();
         $quizz=$entityManager->getRepository('QuizzBundle:Categorie')->find($id_categorie);
@@ -38,10 +38,6 @@ class DefaultController extends Controller
                 array('idQuestion' => $test->getId()));
         }
 
-    /*     dump($quizz);
-        dump($questions);
-       die();
-    */
 
         return $this->render('@Quizz/quizz.html.twig', array(
             "quizz" => $quizz,
