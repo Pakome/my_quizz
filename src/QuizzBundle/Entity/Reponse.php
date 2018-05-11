@@ -42,6 +42,29 @@ class Reponse
      */
     private $reponseExpected;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdQuestion()
+    {
+        return $this->idQuestion;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReponse()
+    {
+        return $this->reponse;
+    }
 
 }
 
