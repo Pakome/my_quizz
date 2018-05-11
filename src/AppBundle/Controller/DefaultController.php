@@ -17,20 +17,5 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
-    }
-
-    /**
-     * @Route("/user/test", name="roleUser")
-     */    
-    public function roleUserAction (Request $request) {
-        return $this->render('roles/hello-world.html.twig');
-    }
-
-    /**
-     * @Route("/admin/test", name="roleAdmin")
-     */    
-    public function roleAdminAction (Request $request) {
-        return $this->render('roles/hello-world-admin.html.twig');
-    }
-    
+    }    
 }

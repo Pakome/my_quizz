@@ -54,7 +54,7 @@ class Categorie
     /**
      * @return string
      */
-    public function getImage()
+    public function getimageUrl()
     {
         return $this->image;
     }

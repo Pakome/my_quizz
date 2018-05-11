@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}MyQuiz.fr{% endblock %}</title>
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -14,7 +14,12 @@
         {% block stylesheets %}       
         {% endblock %}   
         <style>
-            body { font-family: 'Raleway', sans-serif; }
+            body { 
+            font-family: 'Raleway', sans-serif; 
+            background: #dbdfeb;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E2E2E2, #dbdfeb);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E2E2E2, #dbdfeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */            
+            }
             a { color: #0000F0; }
             a:hover { text-decoration: none; }
         </style>
@@ -36,9 +41,16 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Mon historique <span class="sr-only">(current)</span></a>
             </li>
+            {% if is_granted('ROLE_USER') %}
+            <li class="nav-item active">
+                <a class="nav-link" href="/quizz/create" style="color: #007bff;">Créer un quiz <span class="sr-only">(current)</span></a>
+            </li>
+            {% else %}
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Créer un quiz</a>
             </li>
+            {% endif %}
+
             </ul>
             <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Chercher un quiz..." aria-label="Search">
